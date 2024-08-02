@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wiksa⁰⁷🎀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="wks">wiksa</h1>
+        <img src="сердечко.png" class="сердечко1">
+        <img src="сердечко1-removebg-preview.png" class="сердечко2">
+    </header>
+    <section class="frst">
+        <div class="gallery">
+            <img src="испуганый_wiksa-removebg-preview.png" alt="должен был быть испуганый котик" id="scared-cat" style="cursor: pointer;">
+            <p class="wksa">wiksa играет↓</p>
+            <img src="бравлст.jpg" alt="тут бравл старс" class="brawlst" id="brawlst-img">
+            <p class="playing">'играет'</p>
+            <img src="пайпер.jpg" alt="пайпер" class="piper" id="piper-img">
+            <p class="favorite" id="favorite-text">favorite<3<3<3<3<3</p>
+        </div>
+        <div class="message" id="message"></div>
+
+        <div class="gallery2">
+            <p class="wksa1">wiksa с подругой↓</p>
+            <img src="wiksa-removebg-preview.png" alt="должен быть милый котик" class="mili_kotik" id="mili_kotik">
+            <div class="message1" id="message1"></div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('scared-cat').addEventListener('click', function() {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = 'ты меня ущемляешь';
+            console.log('Click event triggered');
+        });
+        document.getElementById('mili_kotik').addEventListener('click', function() {
+            const messageDiv1 = document.getElementById('message1');
+            messageDiv1.textContent = 'што надо';
+            console.log('Click event triggered');
+        });
+
+
+        document.getElementById('brawlst-img').addEventListener('click', function() {
+            const brawlstImg = document.getElementById('brawlst-img');
+            const piperImg = document.getElementById('piper-img');
+            const favoriteText = document.getElementById('favorite-text');
+
+            brawlstImg.style.display = 'none'; // Скрыть изображение бравлст
+            piperImg.style.display = 'block'; // Показать изображение пайпер
+            favoriteText.style.display = 'block'; // Показать текст favorite?
+        });
+    </script>
+</body>
+</html>
