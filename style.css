@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Comfortaa';
 }
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: azure;
@@ -15,6 +16,7 @@ header {
     background-color: #b0e0e6;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
@@ -23,39 +25,42 @@ header h1 {
     font-size: 3em;
 }
 
-.сердечко1{
+.сердечко1 {
     transform: rotate(150deg);
     max-width: 60px;
     position: absolute;
     top: 10px;
-    left: 700px;
+    left: 50%;
+    transform: translateX(-300px) rotate(150deg);
 }
 
-.сердечко2{
+.сердечко2 {
     max-width: 90px;
     position: absolute;
     top: 6px;
-    right: 700px
+    right: 50%;
+    transform: translateX(300px);
 }
 
 .frst {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Выровнять по левому краю */
+    align-items: flex-start;
     padding: 20px;
     margin: 0;
 }
 
 .gallery {
     display: flex;
-    align-items: start; /* Выравнивание по верхнему краю */
+    flex-wrap: wrap;
+    align-items: start;
     gap: 15px;
     position: relative;
 }
 
 .gallery img {
     width: 100%;
-    max-width: 200px; /* Ограничиваем максимальную ширину */
+    max-width: 200px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s;
@@ -67,7 +72,7 @@ header h1 {
 }
 
 .gallery img:first-child {
-    transform: rotateY(180deg); /* Повернуть кота */
+    transform: rotateY(180deg);
 }
 
 .wks:hover {
@@ -96,26 +101,27 @@ header h1 {
 
 .playing {
     position: relative;
-    top: 70px; /* Уменьшено, чтобы избежать сильного сдвига */
+    top: 70px;
     left: 100px;
 }
 
-#message{
+#message {
     margin: 0;
 }
+
 .piper {
     max-height: 100px;
-    display: none; /* Скрыто по умолчанию */
-    position: relative;
+    display: none;
+    position: absolute;
     top: 100px;
-    left: -40px;
+    left: 250px;
 }
 
 .favorite {
-    display: none; /* Скрыто по умолчанию */
-    position: absolute;
-    top: 210px; /* Расположить сразу ниже элемента */
-    left: 350px;
+    display: none;
+    position: relative;
+    top: 210px;
+    left: 10%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px 10px;
@@ -124,7 +130,6 @@ header h1 {
     color: #333;
     text-align: center;
     z-index: 10;
-
 }
 
 .brawlst {
@@ -141,25 +146,33 @@ header h1 {
     top: -10px;
 }
 
-
-.gallery2{
+.gallery2 {
     display: flex;
-    justify-content: end;
+    flex-direction: row;
+    align-items: flex-start;
     position: relative;
+    margin-top: 200px;
 }
-.mili_kotik{
-    position: absolute;
-    left: 1200px;
+
+.wksa1 {
+    position: relative;
+    margin-bottom: -200px;
+    padding-top: 100px;
+    left: 20px;
+}
+
+.mili_kotik {
+    position: relative;
+    left: 0;
     max-width: 200px;
     padding: 5px 10px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.7);
     transition-duration: 0.5s;
-    top: -230px;
 }
 
-.mili_kotik:hover{
-    transform: scale(1.05,1.05);
+.mili_kotik:hover {
+    transform: scale(1.05, 1.05);
 }
 
 .message1 {
@@ -167,13 +180,59 @@ header h1 {
     font-size: 1.5em;
     color: #333;
     position: relative;
-    left: 1080px;
-    top: -40px;
+
 }
 
-.wksa1{
+.friend_wiksa {
     position: relative;
-    left: 1225px;
-    top: -250px;
+    max-width: 290px;
+}
+
+.knife {
+    max-width: 100px;
+    position: relative;
+    top: 50px;
+}
+.texts{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .сердечко1 {
+        transform: translateX(-150px) rotate(150deg);
+    }
+
+    .сердечко2 {
+        transform: translateX(150px);
+    }
+
+    .gallery, .gallery2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brawlst, .playing, .piper, .favorite {
+        position: static;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
+
+    .mili_kotik, .friend_wiksa, .knife {
+        position: static;
+        transform: none;
+        left: 0;
+    }
+
+    .message, .message1, .wksa, .wksa1 {
+        text-align: center;
+        position: static;
+        margin-top: 10px;
+    }
 }
 
